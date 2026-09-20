@@ -1,23 +1,20 @@
 using MediatR;
-using Microsoft.EntityFrameworkCore;
-using SpaReservation.Infrastructure.Data;
+using SpaReservation.Domain.Bookings;
 
 namespace SpaReservation.Application.Bookings.Queries;
 
 public class GetBookingQueryHandler : IRequestHandler<GetBookingQuery, BookingDto?>
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IBookingRepository _bookingRepository;
 
-    public GetBookingQueryHandler(ApplicationDbContext context)
+    public GetBookingQueryHandler(IBookingRepository bookingRepository)
     {
-        _context = context;
+        _bookingRepository = bookingRepository;
     }
 
     public async Task<BookingDto?> Handle(GetBookingQuery request, CancellationToken cancellationToken)
     {
-        var booking = await _context.Bookings
-            .AsNoTracking()
-            .FirstOrDefaultAsync(b => b.Id == request.BookingId, cancellationToken);
+        var booking = await _bookingRepository.GetByIdAsync(request.BookingId, cancellationToken);
 
         if (booking == null) return null;
 

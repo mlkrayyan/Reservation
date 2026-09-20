@@ -2,17 +2,19 @@ using MediatR;
 using SpaReservation.Domain.Bookings;
 using SpaReservation.Domain.Services;
 using SpaReservation.Domain.Staff;
-using SpaReservation.Infrastructure.Data;
+using SpaReservation.Domain.SharedKernel;
 
 namespace SpaReservation.Application.Bookings.Commands;
 
 public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand, Guid>
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IBookingRepository _bookingRepository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public CreateBookingCommandHandler(ApplicationDbContext context)
+    public CreateBookingCommandHandler(IBookingRepository bookingRepository, IUnitOfWork unitOfWork)
     {
-        _context = context;
+        _bookingRepository = bookingRepository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<Guid> Handle(CreateBookingCommand request, CancellationToken cancellationToken)
@@ -22,9 +24,8 @@ public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand,
         // Basic validation...
         var booking = Booking.Create(request.CustomerId, request.StaffId, request.ServiceId, slot, request.Notes);
         
-        _context.Bookings.Add(booking);
-        await _context.SaveChangesAsync(cancellationToken);
-        
+        await _bookingRepository.AddAsync(booking, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
         return booking.Id;
     }
 }

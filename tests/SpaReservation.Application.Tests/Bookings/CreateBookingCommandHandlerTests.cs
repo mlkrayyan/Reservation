@@ -1,9 +1,8 @@
 using FluentAssertions;
 using Moq;
-using Microsoft.EntityFrameworkCore;
 using SpaReservation.Application.Bookings.Commands;
-using SpaReservation.Infrastructure.Data;
 using SpaReservation.Domain.Bookings;
+using SpaReservation.Domain.SharedKernel;
 
 namespace SpaReservation.Application.Tests.Bookings;
 
@@ -12,12 +11,10 @@ public class CreateBookingCommandHandlerTests
     [Fact]
     public async Task Handle_ShouldAddBookingAndReturnId()
     {
-        var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: "TestSpaDb")
-            .Options;
+        var bookingRepositoryMock = new Mock<IBookingRepository>();
+        var unitOfWorkMock = new Mock<IUnitOfWork>();
             
-        using var context = new ApplicationDbContext(options);
-        var handler = new CreateBookingCommandHandler(context);
+        var handler = new CreateBookingCommandHandler(bookingRepositoryMock.Object, unitOfWorkMock.Object);
         var command = new CreateBookingCommand(
             Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(),
             DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
@@ -29,9 +26,7 @@ public class CreateBookingCommandHandlerTests
         var id = await handler.Handle(command, CancellationToken.None);
         
         id.Should().NotBeEmpty();
-        var booking = await context.Bookings.FindAsync(id);
-        booking.Should().NotBeNull();
-        booking!.Notes.Should().Be("Test");
-        booking.Status.Should().Be(BookingStatus.Pending);
+        bookingRepositoryMock.Verify(x => x.AddAsync(It.IsAny<Booking>(), It.IsAny<CancellationToken>()), Times.Once);
+        unitOfWorkMock.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
     }
 }

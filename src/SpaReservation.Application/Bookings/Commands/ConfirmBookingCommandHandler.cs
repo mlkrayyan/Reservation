@@ -1,23 +1,26 @@
 using MediatR;
-using SpaReservation.Infrastructure.Data;
+using SpaReservation.Domain.Bookings;
+using SpaReservation.Domain.SharedKernel;
 
 namespace SpaReservation.Application.Bookings.Commands;
 
 public class ConfirmBookingCommandHandler : IRequestHandler<ConfirmBookingCommand>
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IBookingRepository _bookingRepository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public ConfirmBookingCommandHandler(ApplicationDbContext context)
+    public ConfirmBookingCommandHandler(IBookingRepository bookingRepository, IUnitOfWork unitOfWork)
     {
-        _context = context;
+        _bookingRepository = bookingRepository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task Handle(ConfirmBookingCommand request, CancellationToken cancellationToken)
     {
-        var booking = await _context.Bookings.FindAsync(new object[] { request.BookingId }, cancellationToken);
+        var booking = await _bookingRepository.GetByIdAsync(request.BookingId, cancellationToken);
         if (booking == null) throw new Exception("Booking not found.");
         
         booking.Confirm();
-        await _context.SaveChangesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
     }
 }
