@@ -8,6 +8,7 @@ using SpaReservation.Domain.Services;
 using SpaReservation.Domain.Staff;
 using SpaReservation.Domain.Waitlist;
 using SpaReservation.Domain.Notifications;
+using SpaReservation.Domain.SharedKernel;
 using SpaReservation.Infrastructure.Repositories;
 
 namespace SpaReservation.Infrastructure;
