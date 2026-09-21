@@ -1,12 +1,26 @@
 using Microsoft.OpenApi.Models;
+using Hangfire;
 using SpaReservation.Infrastructure;
+using SpaReservation.Infrastructure.Data;
 using SpaReservation.Application;
+using SpaReservation.Application.BackgroundJobs;
 using SpaReservation.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -51,13 +65,19 @@ builder.Services.AddAuthentication("Bearer")
     });
 
 builder.Services.AddAuthorization();
-
 builder.Services.AddInfrastructure(builder.Configuration);
 
 // Add Application layer services (MediatR)
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SpaReservation.Application.Bookings.Commands.CreateBookingCommand).Assembly));
 
 var app = builder.Build();
+
+// Seed Database on Startup
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await DbSeeder.SeedAsync(context);
+}
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
@@ -69,8 +89,21 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Hangfire Dashboard & Jobs
+app.UseHangfireDashboard("/hangfire");
+
+using (var scope = app.Services.CreateScope())
+{
+    var recurringJobs = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
+    recurringJobs.AddOrUpdate<IBookingReminderJob>("reminder-24h", job => job.Send24hRemindersAsync(), Cron.Daily);
+    recurringJobs.AddOrUpdate<IBookingReminderJob>("reminder-1h", job => job.Send1hRemindersAsync(), Cron.Hourly);
+    recurringJobs.AddOrUpdate<IBookingReminderJob>("waitlist-expire", job => job.ExpireWaitlistEntriesAsync(), Cron.Daily);
+}
+
 app.MapControllers();
 
 app.Run();

@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://localhost:7119/api',
+  baseURL: 'http://localhost:5139/api',
 });
+
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('spa_token');
