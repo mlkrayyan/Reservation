@@ -1,0 +1,11 @@
+.admin-waitlist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.offer-sent-badge {
+  font-size: 0.85rem;
+  color: #10b981;
+  font-weight: 600;
+}
