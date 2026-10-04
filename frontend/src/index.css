@@ -1,5 +1,10 @@
+@import './fonts.css';
+
 :root {
-  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Cairo for both scripts. It carries Arabic and Latin in one family, so the
+     UI keeps a single voice when the language toggle flips. Self-hosted — see
+     fonts.css for why that matters here. */
+  --font-family: 'Cairo', system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   /* ---------------------------------------------------------------------
      Light theme — warm cream & soft orchid.
@@ -104,6 +109,5 @@ h1, h2, h3, h4, h5, h6 {
   outline-offset: 2px;
 }
 
-[dir="rtl"] {
-  --font-family: 'Cairo', system-ui, sans-serif;
-}
+/* No RTL font override any more — Cairo covers both scripts, so the family is
+   set once on :root and the unicode-range split picks the right subset. */
