@@ -118,10 +118,18 @@ i18n
     }
   });
 
-i18n.on('languageChanged', (lng) => {
+const applyDirection = (lng: string) => {
   document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.lang = lng;
-});
+};
+
+i18n.on('languageChanged', applyDirection);
+
+// Also apply on startup. The listener alone only fires when the language
+// CHANGES, so a reload with Arabic already detected left index.html's static
+// lang="en" / LTR in place until the user toggled. Every mirrored layout — the
+// nav, the split hero — came up the wrong way round on first paint.
+applyDirection(i18n.resolvedLanguage ?? i18n.language ?? 'en');
 
 export default i18n;
 
