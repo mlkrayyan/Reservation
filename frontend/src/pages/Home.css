@@ -12,8 +12,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* Local asset, not a CDN URL — the offline demo has no network. */
   background: radial-gradient(circle at center, rgba(123, 47, 190, 0.25) 0%, rgba(13, 13, 13, 0.95) 70%),
-              url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+              url('../assets/hero-spa.jpg') center/cover no-repeat;
   padding: 4rem 1.5rem;
 }
 
