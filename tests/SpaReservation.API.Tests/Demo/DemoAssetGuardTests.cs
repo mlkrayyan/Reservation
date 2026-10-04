@@ -37,6 +37,47 @@ public class DemoAssetGuardTests : IDisposable
         DemoAssetGuard.MissingAssetsMessage.Should().Contain("build-demo.ps1");
     }
 
+    [Fact]
+    public void ResolveContentRoot_PicksTheFirstCandidateThatHoldsAWwwroot()
+    {
+        var withoutWwwroot = Path.Combine(_tempRoot, "no-spa");
+        var withWwwroot = Path.Combine(_tempRoot, "has-spa");
+        Directory.CreateDirectory(withoutWwwroot);
+        Directory.CreateDirectory(Path.Combine(withWwwroot, "wwwroot"));
+
+        DemoAssetGuard.ResolveContentRoot(withoutWwwroot, withWwwroot)
+            .Should().Be(withWwwroot);
+    }
+
+    [Fact]
+    public void ResolveContentRoot_SkipsNullAndEmptyCandidates()
+    {
+        var withWwwroot = Path.Combine(_tempRoot, "has-spa");
+        Directory.CreateDirectory(Path.Combine(withWwwroot, "wwwroot"));
+
+        DemoAssetGuard.ResolveContentRoot(null, string.Empty, withWwwroot)
+            .Should().Be(withWwwroot);
+    }
+
+    [Fact]
+    public void ResolveContentRoot_WhenNoCandidateHoldsAWwwroot_LeavesCurrentDirectoryAlone()
+    {
+        var withoutWwwroot = Path.Combine(_tempRoot, "no-spa");
+        Directory.CreateDirectory(withoutWwwroot);
+
+        DemoAssetGuard.ResolveContentRoot(withoutWwwroot)
+            .Should().Be(Directory.GetCurrentDirectory());
+    }
+
+    [Fact]
+    public void DescribeSearchedPaths_ReportsBothRootsIncludingNulls()
+    {
+        var description = DemoAssetGuard.DescribeSearchedPaths(@"C:\content", null);
+
+        description.Should().Contain(@"C:\content");
+        description.Should().Contain("(null)");
+    }
+
     public void Dispose()
     {
         if (Directory.Exists(_tempRoot))

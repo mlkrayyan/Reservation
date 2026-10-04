@@ -9,11 +9,21 @@ using SpaReservation.Application;
 using SpaReservation.Application.BackgroundJobs;
 using SpaReservation.API.Middleware;
 
-// A double-clicked demo exe has no launch profile to set this, so default it
-// here — before WebApplication.CreateBuilder reads configuration.
+// No ASPNETCORE_ENVIRONMENT means nobody launched us through a profile: this is
+// the standalone demo exe being run directly. Two things follow from that.
+//
+// 1. Default the environment to Demo, before CreateBuilder reads configuration.
+// 2. Pin the working directory to the executable's own folder. ASP.NET derives
+//    its content root — and therefore wwwroot — from the current directory, so
+//    launching the exe from anywhere other than its own folder would otherwise
+//    hide the bundled SPA.
+//
+// Tests and `dotnet run` set ASPNETCORE_ENVIRONMENT explicitly, so neither is
+// affected by this block.
 if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")))
 {
     Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", DemoEnvironment.Name);
+    Directory.SetCurrentDirectory(DemoAssetGuard.ResolveContentRoot());
 }
 
 var builder = WebApplication.CreateBuilder(args);
@@ -93,6 +103,8 @@ var app = builder.Build();
 if (isDemo && !DemoAssetGuard.SpaAssetsPresent(app.Environment.WebRootPath))
 {
     Console.Error.WriteLine(DemoAssetGuard.MissingAssetsMessage);
+    Console.Error.WriteLine(DemoAssetGuard.DescribeSearchedPaths(
+        app.Environment.ContentRootPath, app.Environment.WebRootPath));
     return 1;
 }
 
