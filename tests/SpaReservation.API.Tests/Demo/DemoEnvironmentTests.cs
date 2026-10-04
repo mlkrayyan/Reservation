@@ -49,7 +49,9 @@ public class DemoEnvironmentTests
 
         try
         {
-            DemoEnvironment.ResolveUrl(occupiedPort).Should().Be("http://localhost:0");
+            // 127.0.0.1, not localhost: Kestrel refuses to bind a dynamic port
+            // against the localhost hostname.
+            DemoEnvironment.ResolveUrl(occupiedPort).Should().Be("http://127.0.0.1:0");
         }
         finally
         {

@@ -35,11 +35,15 @@ public static class DemoEnvironment
     /// <summary>
     /// Loopback only — never 0.0.0.0. The demo mounts an unauthenticated
     /// Hangfire dashboard, so it must not be reachable from the network.
+    ///
     /// Port 0 asks the OS for any free port; the real one is read back from
-    /// IServerAddressesFeature once Kestrel is listening.
+    /// IServerAddressesFeature once Kestrel is listening. The fallback must use
+    /// 127.0.0.1 rather than the "localhost" hostname: Kestrel rejects dynamic
+    /// port binding against localhost with "Dynamic port binding is not
+    /// supported when binding to localhost."
     /// </summary>
     public static string ResolveUrl(int preferredPort) =>
         IsPortAvailable(preferredPort)
             ? $"http://localhost:{preferredPort}"
-            : "http://localhost:0";
+            : "http://127.0.0.1:0";
 }
