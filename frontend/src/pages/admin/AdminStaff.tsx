@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../../components/ui/Button';
-import api from '../../services/api';
+import { getStaff } from '../../services/api';
 import './AdminStaff.css';
 
 interface StaffMemberAdmin {
@@ -17,8 +17,17 @@ export default function AdminStaff() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    api.get('/staff')
-      .then((res) => setStaffList(res.data))
+    // Via the typed helper, not api.get: /staff answers with a PagedResult
+    // envelope whose members use fullName, which this table cannot render.
+    getStaff()
+      .then((data) => setStaffList(data.map((s) => ({
+        ...s,
+        bio: s.bio ?? '',
+        // The staff endpoint carries workingSchedules, but this screen has no
+        // formatter for them. Show it as unknown rather than inventing hours.
+        workingHours: '—',
+        isActive: true,
+      }))))
       .catch(() => {
         setStaffList([
           { id: 'stf-1', name: 'Dr. Fatima Al-Zahra', specialization: 'Facial & Skincare', bio: 'Specialist in facial & skin therapy', workingHours: '09:00 AM - 05:00 PM (Sat-Thu)', isActive: true },

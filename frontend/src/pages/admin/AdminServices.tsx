@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../../components/ui/Button';
-import api from '../../services/api';
+import api, { getServices } from '../../services/api';
 import './AdminServices.css';
 
 interface ServiceRecord {
@@ -26,8 +26,10 @@ export default function AdminServices() {
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    api.get('/services')
-      .then((res) => setServices(res.data))
+    // Via the typed helper, not api.get: /services answers with a PagedResult
+    // envelope of bilingual entities that this table cannot render directly.
+    getServices()
+      .then((data) => setServices(data.map((s) => ({ ...s, category: s.category ?? '', description: s.description ?? '' }))))
       .catch(() => {
         setServices([
           { id: 'srv-1', name: 'Royal Swedish Massage', category: 'MassageTherapy', durationMinutes: 60, price: 80, description: 'Deep muscle relaxation treatment using essential lavender oils.' },

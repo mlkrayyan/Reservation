@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../services/useAuthStore';
 import { Button } from '../components/ui/Button';
-import api from '../services/api';
+import api, { getServices, getStaff } from '../services/api';
 import './Booking.css';
 
 interface ServiceItem {
@@ -46,8 +46,10 @@ export default function Booking() {
   // Initial load
   useEffect(() => {
     // Fetch Services
-    api.get('/services')
-      .then((res) => setServices(res.data))
+    // Via the typed helper, not api.get: /services answers with a PagedResult
+    // envelope of bilingual entities, which would crash the .map below.
+    getServices()
+      .then((data) => setServices(data))
       .catch(() => {
         const mockSrvs = [
           { id: 'srv-1', name: 'Royal Swedish Massage', durationMinutes: 60, price: 80 },
@@ -63,8 +65,8 @@ export default function Booking() {
       });
 
     // Fetch Staff
-    api.get('/staff')
-      .then((res) => setStaffList(res.data))
+    getStaff()
+      .then((data) => setStaffList(data))
       .catch(() => {
         const mockStaff = [
           { id: 'stf-1', name: 'Dr. Fatima Al-Zahra', specialization: 'Facial & Skincare' },
