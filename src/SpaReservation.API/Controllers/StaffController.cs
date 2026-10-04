@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SpaReservation.Application.Common.Models;
 using SpaReservation.Domain.Staff;
 
 namespace SpaReservation.API.Controllers;
@@ -15,9 +16,12 @@ public class StaffController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<StaffMember>>> GetActive()
+    public async Task<ActionResult<PagedResult<StaffMember>>> GetActive(
+        [FromQuery] int pageNumber = 1,
+        [FromQuery] int pageSize = 6)
     {
-        var staff = await _repository.GetActiveAsync();
-        return Ok(staff);
+        var (items, totalCount) = await _repository.GetPagedActiveAsync(pageNumber, pageSize);
+        var result = PagedResult<StaffMember>.Create(items.ToList(), pageNumber, pageSize, totalCount);
+        return Ok(result);
     }
 }

@@ -1,0 +1,607 @@
+{
+  "E:\\Projects\\Reservation\\frontend\\.oxlintrc.json": {
+    "mtime": 1789938025.6979294,
+    "ast_hash": "029f4905006c1fffd96bc863e2d98d3e",
+    "semantic_hash": "029f4905006c1fffd96bc863e2d98d3e"
+  },
+  "E:\\Projects\\Reservation\\frontend\\package.json": {
+    "mtime": 1789938143.353332,
+    "ast_hash": "982a7c33414b0ef37d58520c4ff2e46e",
+    "semantic_hash": "982a7c33414b0ef37d58520c4ff2e46e"
+  },
+  "E:\\Projects\\Reservation\\frontend\\tsconfig.app.json": {
+    "mtime": 1789938025.7209716,
+    "ast_hash": "5f2dafd737dea8a4ddcbb10f5113ac5a",
+    "semantic_hash": "5f2dafd737dea8a4ddcbb10f5113ac5a"
+  },
+  "E:\\Projects\\Reservation\\frontend\\tsconfig.json": {
+    "mtime": 1789938025.7219708,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": "a3d39fa780ebff65444de257f291ce6c"
+  },
+  "E:\\Projects\\Reservation\\frontend\\tsconfig.node.json": {
+    "mtime": 1789938025.7229698,
+    "ast_hash": "f9cb81ddcea69ffdab672fc8c48dca66",
+    "semantic_hash": "f9cb81ddcea69ffdab672fc8c48dca66"
+  },
+  "E:\\Projects\\Reservation\\frontend\\vite.config.ts": {
+    "mtime": 1789938025.7239692,
+    "ast_hash": "5d54447744c19ccd28638a5c668d15ea",
+    "semantic_hash": "5d54447744c19ccd28638a5c668d15ea"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\App.tsx": {
+    "mtime": 1789992561.0209427,
+    "ast_hash": "e5804ff8972a84e735550068b32298c3",
+    "semantic_hash": "e5804ff8972a84e735550068b32298c3"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\i18n.ts": {
+    "mtime": 1789991578.2792633,
+    "ast_hash": "e9824839e657018e740ae6a3a305f06a",
+    "semantic_hash": "e9824839e657018e740ae6a3a305f06a"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\main.tsx": {
+    "mtime": 1789938719.6440177,
+    "ast_hash": "51dca766d1164e9c2b41e794822d40c8",
+    "semantic_hash": "51dca766d1164e9c2b41e794822d40c8"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\admin\\AdminLayout.tsx": {
+    "mtime": 1789992177.0618408,
+    "ast_hash": "891a797e7d13227f9cf17eed429adb0e",
+    "semantic_hash": "891a797e7d13227f9cf17eed429adb0e"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\auth\\AuthModal.tsx": {
+    "mtime": 1789991686.687204,
+    "ast_hash": "8a2f4db528cc088be7c1f336d8964d75",
+    "semantic_hash": "8a2f4db528cc088be7c1f336d8964d75"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\auth\\ProtectedRoute.tsx": {
+    "mtime": 1789991737.9268868,
+    "ast_hash": "4cc2226060839ce9ed34900b19ae2659",
+    "semantic_hash": "4cc2226060839ce9ed34900b19ae2659"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\layout\\MainLayout.tsx": {
+    "mtime": 1789991756.2315044,
+    "ast_hash": "898ea7d4b7fabb3631dfadb40a880b08",
+    "semantic_hash": "898ea7d4b7fabb3631dfadb40a880b08"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\ui\\Button.tsx": {
+    "mtime": 1789991438.2497673,
+    "ast_hash": "bb572527a1dcfa690c7d16eebbf4047c",
+    "semantic_hash": "bb572527a1dcfa690c7d16eebbf4047c"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\ui\\Card.tsx": {
+    "mtime": 1789938731.5612855,
+    "ast_hash": "1ef8a5ca9b506ca43ac9804438bc3201",
+    "semantic_hash": "1ef8a5ca9b506ca43ac9804438bc3201"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\components\\ui\\Input.tsx": {
+    "mtime": 1789938743.7298284,
+    "ast_hash": "81ef75d996d8c3c04e2404a2d07cbd14",
+    "semantic_hash": "81ef75d996d8c3c04e2404a2d07cbd14"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\Booking.tsx": {
+    "mtime": 1789991949.4595258,
+    "ast_hash": "e44bcb58b4c9694d3be3ec3487dc36aa",
+    "semantic_hash": "e44bcb58b4c9694d3be3ec3487dc36aa"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\Home.tsx": {
+    "mtime": 1789991805.4954321,
+    "ast_hash": "ff62a34a1922853a471a10ba9220cf8d",
+    "semantic_hash": "ff62a34a1922853a471a10ba9220cf8d"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\Loyalty.tsx": {
+    "mtime": 1789992065.102515,
+    "ast_hash": "bd2afdef2807f8e8f6e73052d9a0a2a1",
+    "semantic_hash": "bd2afdef2807f8e8f6e73052d9a0a2a1"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\MyBookings.tsx": {
+    "mtime": 1789992001.5711808,
+    "ast_hash": "ee82edef471685ba75be99d6afa3dd98",
+    "semantic_hash": "ee82edef471685ba75be99d6afa3dd98"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\Services.tsx": {
+    "mtime": 1789991847.100258,
+    "ast_hash": "83297ad22444ffe4a89b967491a2e26c",
+    "semantic_hash": "83297ad22444ffe4a89b967491a2e26c"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\Staff.tsx": {
+    "mtime": 1789991911.9034374,
+    "ast_hash": "d2ee1bbd04f296c73e38a12da3d3a132",
+    "semantic_hash": "d2ee1bbd04f296c73e38a12da3d3a132"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\Waitlist.tsx": {
+    "mtime": 1789992120.6653914,
+    "ast_hash": "e21bc15d674039f8b80ee65d187a5a2a",
+    "semantic_hash": "e21bc15d674039f8b80ee65d187a5a2a"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\admin\\AdminAnalytics.tsx": {
+    "mtime": 1789992517.625935,
+    "ast_hash": "15c8250dc739a5946768914d45bc7b35",
+    "semantic_hash": "15c8250dc739a5946768914d45bc7b35"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\admin\\AdminBookings.tsx": {
+    "mtime": 1789992323.8051674,
+    "ast_hash": "66f14a939cc4b0a7dfc03eb85b5cbf7a",
+    "semantic_hash": "66f14a939cc4b0a7dfc03eb85b5cbf7a"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\admin\\AdminDashboard.tsx": {
+    "mtime": 1789992244.120824,
+    "ast_hash": "a5d43ce7306baeadffec0ac6ab3ae635",
+    "semantic_hash": "a5d43ce7306baeadffec0ac6ab3ae635"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\admin\\AdminServices.tsx": {
+    "mtime": 1789992381.6669912,
+    "ast_hash": "e790c5519ccfb805c72817d9ea7cc851",
+    "semantic_hash": "e790c5519ccfb805c72817d9ea7cc851"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\admin\\AdminStaff.tsx": {
+    "mtime": 1789992434.5660188,
+    "ast_hash": "9e6d5c2c3320d804e5a78ae1a6b31350",
+    "semantic_hash": "9e6d5c2c3320d804e5a78ae1a6b31350"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\pages\\admin\\AdminWaitlist.tsx": {
+    "mtime": 1789992483.056212,
+    "ast_hash": "19eccdac38d1bded7a99b67c4132a3d6",
+    "semantic_hash": "19eccdac38d1bded7a99b67c4132a3d6"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\services\\api.ts": {
+    "mtime": 1789996386.3611662,
+    "ast_hash": "80a9f6d30bcddb75bc6417101a1f9e80",
+    "semantic_hash": "80a9f6d30bcddb75bc6417101a1f9e80"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\services\\useAuthStore.ts": {
+    "mtime": 1789991663.8072772,
+    "ast_hash": "df55a54f65fb00c8b5975dd337814369",
+    "semantic_hash": "df55a54f65fb00c8b5975dd337814369"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\appsettings.Development.json": {
+    "mtime": 1789937896.3974268,
+    "ast_hash": "804b473502a4c415cf75db61c56c32aa",
+    "semantic_hash": "804b473502a4c415cf75db61c56c32aa"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\appsettings.json": {
+    "mtime": 1789938663.8919241,
+    "ast_hash": "4a0de442fad84560ee356355bd69e1b6",
+    "semantic_hash": "4a0de442fad84560ee356355bd69e1b6"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Program.cs": {
+    "mtime": 1789998585.706683,
+    "ast_hash": "c4f42d6db10310934a00d50e592878f8",
+    "semantic_hash": "c4f42d6db10310934a00d50e592878f8"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Controllers\\AuthController.cs": {
+    "mtime": 1789938672.4881678,
+    "ast_hash": "dfd8793b82dec81204931ed825273b45",
+    "semantic_hash": "dfd8793b82dec81204931ed825273b45"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Controllers\\BookingsController.cs": {
+    "mtime": 1789938680.5336204,
+    "ast_hash": "9121cd8f6e6dd28c7a4d4c12c823826a",
+    "semantic_hash": "9121cd8f6e6dd28c7a4d4c12c823826a"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Controllers\\CustomersController.cs": {
+    "mtime": 1789938610.5326438,
+    "ast_hash": "b986e7c9fddfdb3357c46b4d26fb3184",
+    "semantic_hash": "b986e7c9fddfdb3357c46b4d26fb3184"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Controllers\\ServicesController.cs": {
+    "mtime": 1789999657.328696,
+    "ast_hash": "337fed1b114e16c61db33719bb3eeed1",
+    "semantic_hash": "337fed1b114e16c61db33719bb3eeed1"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Controllers\\StaffController.cs": {
+    "mtime": 1789999676.790492,
+    "ast_hash": "9706fbcb7b6394172249d366f7b84674",
+    "semantic_hash": "9706fbcb7b6394172249d366f7b84674"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Middleware\\ExceptionHandlingMiddleware.cs": {
+    "mtime": 1789938592.3463314,
+    "ast_hash": "a60552b5d88d3f3ab7527c0064984616",
+    "semantic_hash": "a60552b5d88d3f3ab7527c0064984616"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.API\\Properties\\launchSettings.json": {
+    "mtime": 1789937896.3964322,
+    "ast_hash": "998c19dae583c0fcec81303c7d1a1b8a",
+    "semantic_hash": "998c19dae583c0fcec81303c7d1a1b8a"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Class1.cs": {
+    "mtime": 1789937901.2653668,
+    "ast_hash": "a719c379696f77e93327537a30ea3402",
+    "semantic_hash": "a719c379696f77e93327537a30ea3402"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\BackgroundJobs\\IBookingReminderJob.cs": {
+    "mtime": 1789998489.8701298,
+    "ast_hash": "488a7ef61a9233c8a7e775796336f770",
+    "semantic_hash": "488a7ef61a9233c8a7e775796336f770"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\CancelBookingCommand.cs": {
+    "mtime": 1789938464.0164735,
+    "ast_hash": "ec010158a65d10f81d3347d26a23946b",
+    "semantic_hash": "ec010158a65d10f81d3347d26a23946b"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\CancelBookingCommandHandler.cs": {
+    "mtime": 1789938548.6427343,
+    "ast_hash": "430a49b7000d74d17722f14b13a15a15",
+    "semantic_hash": "430a49b7000d74d17722f14b13a15a15"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\ConfirmBookingCommand.cs": {
+    "mtime": 1789938459.8529687,
+    "ast_hash": "b0de9f1eab8241722355998925439eb5",
+    "semantic_hash": "b0de9f1eab8241722355998925439eb5"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\ConfirmBookingCommandHandler.cs": {
+    "mtime": 1789938544.4487786,
+    "ast_hash": "2c6477c85c1d14c54cefa8b944182196",
+    "semantic_hash": "2c6477c85c1d14c54cefa8b944182196"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\CreateBookingCommand.cs": {
+    "mtime": 1789938453.5163608,
+    "ast_hash": "fabd591dd2c88b9e4c24ae841a20e8fc",
+    "semantic_hash": "fabd591dd2c88b9e4c24ae841a20e8fc"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\CreateBookingCommandHandler.cs": {
+    "mtime": 1789938541.3015904,
+    "ast_hash": "9931ce57a0ba39b85e97c90fa548fffd",
+    "semantic_hash": "9931ce57a0ba39b85e97c90fa548fffd"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Commands\\CreateBookingCommandValidator.cs": {
+    "mtime": 1789938457.7128973,
+    "ast_hash": "24be9c169e0829ba55b0657023f1c66d",
+    "semantic_hash": "24be9c169e0829ba55b0657023f1c66d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Queries\\GetBookingQuery.cs": {
+    "mtime": 1789938478.2719102,
+    "ast_hash": "0b16a85a8ca5ac04e3ca13a56afe814c",
+    "semantic_hash": "0b16a85a8ca5ac04e3ca13a56afe814c"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Bookings\\Queries\\GetBookingQueryHandler.cs": {
+    "mtime": 1789938550.7482169,
+    "ast_hash": "d3d293d687884382e20261e1f9da372f",
+    "semantic_hash": "d3d293d687884382e20261e1f9da372f"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Application\\Common\\Models\\PagedResult.cs": {
+    "mtime": 1789999278.1698816,
+    "ast_hash": "1541cee0c94de26d3528f90c9639e31d",
+    "semantic_hash": "1541cee0c94de26d3528f90c9639e31d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Class1.cs": {
+    "mtime": 1789937902.9744081,
+    "ast_hash": "dbba3e304c8f1dc547c204ad89e182d8",
+    "semantic_hash": "dbba3e304c8f1dc547c204ad89e182d8"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\Booking.cs": {
+    "mtime": 1789938194.6352117,
+    "ast_hash": "b461535969d186bb8ca709d69b71716b",
+    "semantic_hash": "b461535969d186bb8ca709d69b71716b"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\BookingSlot.cs": {
+    "mtime": 1789938173.8765092,
+    "ast_hash": "ee776b5b8bcce9fbc3b68e48359b9b25",
+    "semantic_hash": "ee776b5b8bcce9fbc3b68e48359b9b25"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\BookingStatus.cs": {
+    "mtime": 1789938171.7429836,
+    "ast_hash": "7bb94f3e354376ea229bab9d67425bcb",
+    "semantic_hash": "7bb94f3e354376ea229bab9d67425bcb"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\IBookingRepository.cs": {
+    "mtime": 1789938196.7454484,
+    "ast_hash": "a66d2f95b9873b3a24b5206c16e127be",
+    "semantic_hash": "a66d2f95b9873b3a24b5206c16e127be"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\Events\\BookingCancelled.cs": {
+    "mtime": 1789938180.2746565,
+    "ast_hash": "0445994a61adf41a3e503bf591ca1e5d",
+    "semantic_hash": "0445994a61adf41a3e503bf591ca1e5d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\Events\\BookingCompleted.cs": {
+    "mtime": 1789938192.500581,
+    "ast_hash": "6685bf309bae62966e16fc035e0f16af",
+    "semantic_hash": "6685bf309bae62966e16fc035e0f16af"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\Events\\BookingConfirmed.cs": {
+    "mtime": 1789938178.1550536,
+    "ast_hash": "4860cfb8e8c6e04e39d58bb35ae4365d",
+    "semantic_hash": "4860cfb8e8c6e04e39d58bb35ae4365d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Bookings\\Events\\BookingCreated.cs": {
+    "mtime": 1789938176.0192044,
+    "ast_hash": "6fbcb8fcd4520b53acae1b0a9004d930",
+    "semantic_hash": "6fbcb8fcd4520b53acae1b0a9004d930"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Customers\\Customer.cs": {
+    "mtime": 1789938225.1317897,
+    "ast_hash": "c808b91438c13fb810b04cef7ed4e8e8",
+    "semantic_hash": "c808b91438c13fb810b04cef7ed4e8e8"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Customers\\ICustomerRepository.cs": {
+    "mtime": 1789938227.260069,
+    "ast_hash": "0f8652b044ca0adedbd3ed0d1f6bca1b",
+    "semantic_hash": "0f8652b044ca0adedbd3ed0d1f6bca1b"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Customers\\LoyaltyTransaction.cs": {
+    "mtime": 1789938222.9183147,
+    "ast_hash": "316f386207974a2414e6baa8b59da101",
+    "semantic_hash": "316f386207974a2414e6baa8b59da101"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Notifications\\INotificationRepository.cs": {
+    "mtime": 1789938242.3028736,
+    "ast_hash": "2a6847814fda7593a76d6c2b15ea78d5",
+    "semantic_hash": "2a6847814fda7593a76d6c2b15ea78d5"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Notifications\\Notification.cs": {
+    "mtime": 1789938240.173302,
+    "ast_hash": "125100c413e994b9feaabae3c14f91a9",
+    "semantic_hash": "125100c413e994b9feaabae3c14f91a9"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Notifications\\NotificationChannel.cs": {
+    "mtime": 1789938235.9077096,
+    "ast_hash": "c39c8719b297fb578b7feb2bd65f1a7c",
+    "semantic_hash": "c39c8719b297fb578b7feb2bd65f1a7c"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Notifications\\NotificationType.cs": {
+    "mtime": 1789938238.0292482,
+    "ast_hash": "b92d166a357fc7210a48e43e58baf1aa",
+    "semantic_hash": "b92d166a357fc7210a48e43e58baf1aa"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Services\\ISalonServiceRepository.cs": {
+    "mtime": 1789999557.7314966,
+    "ast_hash": "1f81a80a3df0b8d162f2b8409f653f42",
+    "semantic_hash": "1f81a80a3df0b8d162f2b8409f653f42"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Services\\SalonService.cs": {
+    "mtime": 1789938201.0749314,
+    "ast_hash": "d7a231ae07ff52e5071ba6fafeaafcf7",
+    "semantic_hash": "d7a231ae07ff52e5071ba6fafeaafcf7"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Services\\ServiceCategory.cs": {
+    "mtime": 1789938198.9013996,
+    "ast_hash": "c143416bdf6264d746b468e09ad703a8",
+    "semantic_hash": "c143416bdf6264d746b468e09ad703a8"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\SharedKernel\\AggregateRoot.cs": {
+    "mtime": 1789938165.332164,
+    "ast_hash": "a56a0ae07c53301c9d8fe7859c18289d",
+    "semantic_hash": "a56a0ae07c53301c9d8fe7859c18289d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\SharedKernel\\Entity.cs": {
+    "mtime": 1789938163.1594865,
+    "ast_hash": "e42546e54463462654e84c3caa155b10",
+    "semantic_hash": "e42546e54463462654e84c3caa155b10"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\SharedKernel\\IDomainEvent.cs": {
+    "mtime": 1789938160.9128406,
+    "ast_hash": "68fa18824e0d548533aee139dee5daa8",
+    "semantic_hash": "68fa18824e0d548533aee139dee5daa8"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\SharedKernel\\IRepository.cs": {
+    "mtime": 1789938169.6143,
+    "ast_hash": "d2fbafba7d31337047fdfe63e0dbe2c3",
+    "semantic_hash": "d2fbafba7d31337047fdfe63e0dbe2c3"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\SharedKernel\\IUnitOfWork.cs": {
+    "mtime": 1789938519.851273,
+    "ast_hash": "b39ff3ea7ca928e5efdec3e9725f1fa6",
+    "semantic_hash": "b39ff3ea7ca928e5efdec3e9725f1fa6"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\SharedKernel\\ValueObject.cs": {
+    "mtime": 1789938167.5279016,
+    "ast_hash": "023c4f75075c0e1acbea70a6518a29b4",
+    "semantic_hash": "023c4f75075c0e1acbea70a6518a29b4"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Staff\\IStaffRepository.cs": {
+    "mtime": 1789999598.652095,
+    "ast_hash": "b068bee3272bb1d5f78f5106edd5c4b4",
+    "semantic_hash": "b068bee3272bb1d5f78f5106edd5c4b4"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Staff\\StaffMember.cs": {
+    "mtime": 1789938209.700461,
+    "ast_hash": "6685a7d1470aebaf76844d513faf98fb",
+    "semantic_hash": "6685a7d1470aebaf76844d513faf98fb"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Staff\\TimeOff.cs": {
+    "mtime": 1789938207.5463476,
+    "ast_hash": "a62a81bc8cdd421a0e27b5ab7500b3a6",
+    "semantic_hash": "a62a81bc8cdd421a0e27b5ab7500b3a6"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Staff\\WorkingSchedule.cs": {
+    "mtime": 1789938205.419173,
+    "ast_hash": "e5aff0ed103def38d167a309ce7e8366",
+    "semantic_hash": "e5aff0ed103def38d167a309ce7e8366"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Waitlist\\IWaitlistRepository.cs": {
+    "mtime": 1789938233.746845,
+    "ast_hash": "eddf07259d4009eba1e961b5639c0aee",
+    "semantic_hash": "eddf07259d4009eba1e961b5639c0aee"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Waitlist\\WaitlistEntry.cs": {
+    "mtime": 1789938231.6104715,
+    "ast_hash": "243524b4fbca47dc69ebe4e08e94da3d",
+    "semantic_hash": "243524b4fbca47dc69ebe4e08e94da3d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Domain\\Waitlist\\WaitlistStatus.cs": {
+    "mtime": 1789938229.4341,
+    "ast_hash": "f06cc1f94c7682761983504e5a19d068",
+    "semantic_hash": "f06cc1f94c7682761983504e5a19d068"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Class1.cs": {
+    "mtime": 1789937904.6239526,
+    "ast_hash": "c776cf8042879bb40388342304687fcc",
+    "semantic_hash": "c776cf8042879bb40388342304687fcc"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\DependencyInjection.cs": {
+    "mtime": 1789998951.8149774,
+    "ast_hash": "f84b660e0a5fb3e6e14906762f980ec8",
+    "semantic_hash": "f84b660e0a5fb3e6e14906762f980ec8"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\BackgroundJobs\\BookingReminderJob.cs": {
+    "mtime": 1789998693.9191568,
+    "ast_hash": "3eaef6217a772e393482454c33e26357",
+    "semantic_hash": "3eaef6217a772e393482454c33e26357"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\BackgroundJobs\\NotificationJobs.cs": {
+    "mtime": 1789938378.2452855,
+    "ast_hash": "dfaa05010c8ede9120f63271ce0a893c",
+    "semantic_hash": "dfaa05010c8ede9120f63271ce0a893c"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\ApplicationDbContext.cs": {
+    "mtime": 1789938322.0500479,
+    "ast_hash": "bb560249ed6256343e4d09f28a433adb",
+    "semantic_hash": "bb560249ed6256343e4d09f28a433adb"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\DbSeeder.cs": {
+    "mtime": 1789998851.8593361,
+    "ast_hash": "5e663fa89b8cd5a71a60ab8113da54ea",
+    "semantic_hash": "5e663fa89b8cd5a71a60ab8113da54ea"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Configurations\\BookingConfiguration.cs": {
+    "mtime": 1789938324.122841,
+    "ast_hash": "4f5ebb07b7ddedaadbdad3face6df4bf",
+    "semantic_hash": "4f5ebb07b7ddedaadbdad3face6df4bf"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Configurations\\CustomerConfiguration.cs": {
+    "mtime": 1789938326.2766838,
+    "ast_hash": "44ebde90067e9a816c28911e3e1a927c",
+    "semantic_hash": "44ebde90067e9a816c28911e3e1a927c"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Configurations\\NotificationConfiguration.cs": {
+    "mtime": 1789938342.3017545,
+    "ast_hash": "53c076bc967a6d319a5900cf5c28ad31",
+    "semantic_hash": "53c076bc967a6d319a5900cf5c28ad31"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Configurations\\SalonServiceConfiguration.cs": {
+    "mtime": 1789938330.569618,
+    "ast_hash": "629b16ca317095f27784149bc0901b2b",
+    "semantic_hash": "629b16ca317095f27784149bc0901b2b"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Configurations\\StaffMemberConfiguration.cs": {
+    "mtime": 1789938328.4435785,
+    "ast_hash": "3f0768309c8f70a559a6c6c411643d74",
+    "semantic_hash": "3f0768309c8f70a559a6c6c411643d74"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Configurations\\WaitlistEntryConfiguration.cs": {
+    "mtime": 1789938340.2513928,
+    "ast_hash": "609874bda286086825e7ac189964f7db",
+    "semantic_hash": "609874bda286086825e7ac189964f7db"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Migrations\\20260920210718_InitialCreate.cs": {
+    "mtime": 1789938438.9198866,
+    "ast_hash": "c5deff8fd1da189d45bf3c5c6c4794cb",
+    "semantic_hash": "c5deff8fd1da189d45bf3c5c6c4794cb"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Migrations\\20260920210718_InitialCreate.Designer.cs": {
+    "mtime": 1789938438.9198866,
+    "ast_hash": "3273e8aadc18667e851e4a50ef4f0d80",
+    "semantic_hash": "3273e8aadc18667e851e4a50ef4f0d80"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs": {
+    "mtime": 1789938438.9209,
+    "ast_hash": "b12d9105d5725b19903ca84903b5ae6d",
+    "semantic_hash": "b12d9105d5725b19903ca84903b5ae6d"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\BookingRepository.cs": {
+    "mtime": 1789938356.9063952,
+    "ast_hash": "b5f1672a72b63c416f527f234b07a6ef",
+    "semantic_hash": "b5f1672a72b63c416f527f234b07a6ef"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\CustomerRepository.cs": {
+    "mtime": 1789938359.0295017,
+    "ast_hash": "f71e52d4520b3a8300ce64df1fb6a79c",
+    "semantic_hash": "f71e52d4520b3a8300ce64df1fb6a79c"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\NotificationRepository.cs": {
+    "mtime": 1789938367.5113075,
+    "ast_hash": "b091153193e041656189b2790a3866e3",
+    "semantic_hash": "b091153193e041656189b2790a3866e3"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\Repository.cs": {
+    "mtime": 1789938354.8442543,
+    "ast_hash": "5268d1cda0976e3c94b8629cfff0e9da",
+    "semantic_hash": "5268d1cda0976e3c94b8629cfff0e9da"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\SalonServiceRepository.cs": {
+    "mtime": 1789999578.612907,
+    "ast_hash": "0fc71d8ba2e58b66e59633d71a9f8c60",
+    "semantic_hash": "0fc71d8ba2e58b66e59633d71a9f8c60"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\StaffRepository.cs": {
+    "mtime": 1789999637.4542615,
+    "ast_hash": "b0bbc728ba6fdb2a0030df0839b4a147",
+    "semantic_hash": "b0bbc728ba6fdb2a0030df0839b4a147"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\UnitOfWork.cs": {
+    "mtime": 1789938521.9492538,
+    "ast_hash": "99ffd493abf0f384ce67430b25a2ea84",
+    "semantic_hash": "99ffd493abf0f384ce67430b25a2ea84"
+  },
+  "E:\\Projects\\Reservation\\src\\SpaReservation.Infrastructure\\Repositories\\WaitlistRepository.cs": {
+    "mtime": 1789938365.4207158,
+    "ast_hash": "c024ba4efc9615717ca1d9ade22d4661",
+    "semantic_hash": "c024ba4efc9615717ca1d9ade22d4661"
+  },
+  "E:\\Projects\\Reservation\\tests\\SpaReservation.Application.Tests\\UnitTest1.cs": {
+    "mtime": 1789937914.5942273,
+    "ast_hash": "3161a897e9da09750dd74e55c429cfa0",
+    "semantic_hash": "3161a897e9da09750dd74e55c429cfa0"
+  },
+  "E:\\Projects\\Reservation\\tests\\SpaReservation.Application.Tests\\Bookings\\CreateBookingCommandHandlerTests.cs": {
+    "mtime": 1789938552.8290734,
+    "ast_hash": "fee624ac03b89df5da10597affb27e56",
+    "semantic_hash": "fee624ac03b89df5da10597affb27e56"
+  },
+  "E:\\Projects\\Reservation\\tests\\SpaReservation.Domain.Tests\\UnitTest1.cs": {
+    "mtime": 1789937906.2811399,
+    "ast_hash": "7f67a612dc204ff1b4752280b56ec6e4",
+    "semantic_hash": "7f67a612dc204ff1b4752280b56ec6e4"
+  },
+  "E:\\Projects\\Reservation\\tests\\SpaReservation.Domain.Tests\\Bookings\\BookingTests.cs": {
+    "mtime": 1789938286.3891573,
+    "ast_hash": "410333c10fc4d64555b54c6abcaf5989",
+    "semantic_hash": "410333c10fc4d64555b54c6abcaf5989"
+  },
+  "E:\\Projects\\Reservation\\tests\\SpaReservation.Domain.Tests\\Customers\\CustomerTests.cs": {
+    "mtime": 1789938257.6816938,
+    "ast_hash": "d4b30b041c76f086e91832b665ef7876",
+    "semantic_hash": "d4b30b041c76f086e91832b665ef7876"
+  },
+  "E:\\Projects\\Reservation\\docs\\superpowers\\specs\\2026-09-20-spa-salon-reservation-design.md": {
+    "mtime": 1789937219.550917,
+    "ast_hash": "0f85cd1ecb6a9467d949eee3e8724a05",
+    "semantic_hash": "0f85cd1ecb6a9467d949eee3e8724a05"
+  },
+  "E:\\Projects\\Reservation\\frontend\\index.html": {
+    "mtime": 1789938026.283012,
+    "ast_hash": "33bd262affcefea92f1509cda449a19c",
+    "semantic_hash": "33bd262affcefea92f1509cda449a19c"
+  },
+  "E:\\Projects\\Reservation\\frontend\\README.md": {
+    "mtime": 1789938025.6959305,
+    "ast_hash": "10495bfcc6c568eca4dab6dd5df795d3",
+    "semantic_hash": "10495bfcc6c568eca4dab6dd5df795d3"
+  },
+  "E:\\Projects\\Reservation\\frontend\\public\\favicon.svg": {
+    "mtime": 1789938025.7019491,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": "7e840862161341271697daa99a40d76b"
+  },
+  "E:\\Projects\\Reservation\\frontend\\public\\icons.svg": {
+    "mtime": 1789938025.705042,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": "3b4fcfcf393eca4d264dca4a4663bc37"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\assets\\hero.png": {
+    "mtime": 1789938025.7110133,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": "aead493361b27e7510691c5d7072dfc1"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\assets\\react.svg": {
+    "mtime": 1789938025.714013,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": "f0402b67b6ce880f65666bb49e841696"
+  },
+  "E:\\Projects\\Reservation\\frontend\\src\\assets\\vite.svg": {
+    "mtime": 1789938025.715012,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": "9960a24288958394ac50e57ff638b036"
+  }
+}
