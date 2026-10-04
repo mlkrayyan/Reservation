@@ -8,3 +8,4 @@ dist/
 .env.local
 appsettings.Production.json
 *.db
+src/SpaReservation.API/wwwroot/
