@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+// Relative by default so the production build talks to whatever origin served
+// it — that is what lets the demo exe host the SPA and the API on one port.
+// VITE_API_BASE_URL stays available for pointing a build at a remote API.
 const api = axios.create({
-  baseURL: 'http://localhost:5139/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL ?? '/api',
 });
 
 
