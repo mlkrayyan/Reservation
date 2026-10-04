@@ -40,14 +40,37 @@ export interface Staff {
 const unwrapPaged = <T,>(data: T[] | { items: T[] }): T[] =>
   Array.isArray(data) ? data : data?.items ?? [];
 
+// The API exposes the bilingual domain entities directly: SalonService carries
+// nameEn/nameAr and StaffMember carries fullName. The UI is built around a flat
+// single-language shape, and reads member.name.charAt(0) unguarded, so map here
+// rather than scattering fallbacks through the pages. The `??` chains keep these
+// working if an endpoint is ever changed to return the flat shape already.
+const toService = (raw: any): Service => ({
+  id: raw.id,
+  name: raw.nameEn ?? raw.name ?? '',
+  description: raw.descriptionEn ?? raw.description ?? '',
+  durationMinutes: raw.durationMinutes,
+  price: raw.price,
+  category: raw.category,
+});
+
+const toStaff = (raw: any): Staff => ({
+  id: raw.id,
+  name: raw.fullName ?? raw.name ?? '',
+  // StaffMember has no separate specialization field; its bio is written as one
+  // ("Facial & Skincare Specialist with 10+ years experience").
+  specialization: raw.specialization ?? raw.bio ?? '',
+  bio: raw.specialization ? raw.bio : undefined,
+});
+
 export const getServices = async (): Promise<Service[]> => {
   const res = await api.get('/services');
-  return unwrapPaged<Service>(res.data);
+  return unwrapPaged<any>(res.data).map(toService);
 };
 
 export const getStaff = async (): Promise<Staff[]> => {
   const res = await api.get('/staff');
-  return unwrapPaged<Staff>(res.data);
+  return unwrapPaged<any>(res.data).map(toStaff);
 };
 
 export default api;

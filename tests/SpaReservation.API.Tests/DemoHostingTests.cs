@@ -62,6 +62,10 @@ public class DemoHostingTests : IClassFixture<DemoWebApplicationFactory>
         var body = await response.Content.ReadAsStringAsync();
         body.Should().StartWith("{\"items\":[");
         body.Should().NotContain("\"items\":[]", "DbSeeder should have populated services on startup");
+
+        // The SPA filters on category NAMES. Serialising the enum as an integer
+        // would make every category tab silently match nothing.
+        body.Should().Contain("\"category\":\"", "enums must serialise as strings");
     }
 
     [Fact]
