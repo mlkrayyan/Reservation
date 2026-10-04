@@ -32,14 +32,22 @@ export interface Staff {
   bio?: string;
 }
 
+// /services and /staff answer with a PagedResult envelope ({ items, pageNumber,
+// ... }), not a bare array. Callers assign straight into a Service[]/Staff[]
+// state and then .filter/.map it, so handing back the envelope crashes the
+// render — and it crashes past the caller's .catch, because the request itself
+// succeeded. Unwrap here, tolerating a bare array in case an endpoint changes.
+const unwrapPaged = <T,>(data: T[] | { items: T[] }): T[] =>
+  Array.isArray(data) ? data : data?.items ?? [];
+
 export const getServices = async (): Promise<Service[]> => {
   const res = await api.get('/services');
-  return res.data;
+  return unwrapPaged<Service>(res.data);
 };
 
 export const getStaff = async (): Promise<Staff[]> => {
   const res = await api.get('/staff');
-  return res.data;
+  return unwrapPaged<Staff>(res.data);
 };
 
 export default api;
