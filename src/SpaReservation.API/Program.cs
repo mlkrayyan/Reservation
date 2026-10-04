@@ -1,12 +1,28 @@
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.OpenApi.Models;
 using Hangfire;
+using SpaReservation.API.Demo;
 using SpaReservation.Infrastructure;
 using SpaReservation.Infrastructure.Data;
 using SpaReservation.Application;
 using SpaReservation.Application.BackgroundJobs;
 using SpaReservation.API.Middleware;
 
+// A double-clicked demo exe has no launch profile to set this, so default it
+// here — before WebApplication.CreateBuilder reads configuration.
+if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")))
+{
+    Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", DemoEnvironment.Name);
+}
+
 var builder = WebApplication.CreateBuilder(args);
+var isDemo = builder.Environment.IsEnvironment(DemoEnvironment.Name);
+
+if (isDemo)
+{
+    builder.WebHost.UseUrls(DemoEnvironment.ResolveUrl(DemoEnvironment.PreferredPort));
+}
 
 // Add services to the container.
 builder.Services.AddCors(options =>
@@ -72,6 +88,14 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SpaRe
 
 var app = builder.Build();
 
+// A demo build with no SPA inside it would start cleanly and serve 404s, which
+// reads as a broken app rather than a broken build. Say what actually happened.
+if (isDemo && !DemoAssetGuard.SpaAssetsPresent(app.Environment.WebRootPath))
+{
+    Console.Error.WriteLine(DemoAssetGuard.MissingAssetsMessage);
+    return 1;
+}
+
 // Seed Database on Startup
 using (var scope = app.Services.CreateScope())
 {
@@ -82,14 +106,27 @@ using (var scope = app.Services.CreateScope())
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || isDemo)
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// The demo is plain http on loopback; redirecting would send every request to
+// an https endpoint that is not bound.
+if (!isDemo)
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseCors("AllowAll");
+
+if (isDemo)
+{
+    app.UseDefaultFiles();
+    app.UseStaticFiles();
+}
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -106,4 +143,37 @@ using (var scope = app.Services.CreateScope())
 
 app.MapControllers();
 
+if (isDemo)
+{
+    // More specific than the catch-all below, so unmatched /api routes answer
+    // 404 instead of being handed the SPA document.
+    app.MapFallback("/api/{**slug}", () => Results.NotFound());
+
+    // Everything else is a client-side route.
+    app.MapFallbackToFile("index.html");
+
+    app.Lifetime.ApplicationStarted.Register(() =>
+    {
+        var addresses = app.Services.GetRequiredService<IServer>()
+            .Features.Get<IServerAddressesFeature>()?.Addresses
+            ?? Array.Empty<string>();
+
+        var url = DemoLauncher.ResolveListeningUrl(addresses)
+                  ?? $"http://localhost:{DemoEnvironment.PreferredPort}";
+
+        Console.WriteLine(DemoLauncher.BuildBanner(url));
+
+        if (!DemoLauncher.TryOpenBrowser(url, out var error))
+        {
+            Console.WriteLine($"Could not open a browser automatically — open {url} manually. ({error})");
+        }
+    });
+}
+
 app.Run();
+
+return 0;
+
+// Top-level statements generate an internal Program class. WebApplicationFactory
+// needs it public, so widen it here.
+public partial class Program { }
