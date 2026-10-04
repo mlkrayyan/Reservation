@@ -41,6 +41,9 @@ export default function Booking() {
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  // Whether the API actually accepted and stored the reservation. False means
+  // the wizard completed but nothing was saved.
+  const [bookingPersisted, setBookingPersisted] = useState(false);
   const [bookingId, setBookingId] = useState<string>('');
 
   // Initial load
@@ -118,14 +121,18 @@ export default function Booking() {
     api.post('/bookings', payload)
       .then((res) => {
         setBookingId(res.data?.id || `BK-${Math.floor(100000 + Math.random() * 900000)}`);
+        setBookingPersisted(true);
         setBookingConfirmed(true);
         if (user?.loyaltyPoints !== undefined) {
           updateLoyaltyPoints(user.loyaltyPoints + 10);
         }
       })
       .catch(() => {
-        // Fallback smooth confirmation for demonstration mode
+        // The walkthrough continues so the flow can be demonstrated, but the
+        // reservation was NOT saved. bookingPersisted stays false so the
+        // confirmation dialog says so instead of showing a real-looking receipt.
         setBookingId(`BK-${Math.floor(100000 + Math.random() * 900000)}`);
+        setBookingPersisted(false);
         setBookingConfirmed(true);
         if (user?.loyaltyPoints !== undefined) {
           updateLoyaltyPoints(user.loyaltyPoints + 10);
@@ -328,15 +335,32 @@ export default function Booking() {
       {bookingConfirmed && (
         <div className="modal-overlay">
           <div className="confirmation-card">
-            <div className="success-icon">🎉</div>
-            <h2>{t('Booking Success')}</h2>
-            <p className="conf-subtitle">Your appointment has been successfully scheduled.</p>
-            <div className="ref-badge">
-              Reference Code: <strong>{bookingId}</strong>
-            </div>
-            <p className="conf-info">
-              We have dispatched confirmation details via SMS/Email. You earned <strong>+10 Loyalty Points</strong>!
-            </p>
+            <div className="success-icon">{bookingPersisted ? '🎉' : '👀'}</div>
+            <h2>{bookingPersisted ? t('Booking Success') : 'Demo Preview'}</h2>
+            {bookingPersisted ? (
+              <>
+                <p className="conf-subtitle">Your appointment has been successfully scheduled.</p>
+                <div className="ref-badge">
+                  Reference Code: <strong>{bookingId}</strong>
+                </div>
+                <p className="conf-info">
+                  A confirmation notification has been queued. You earned <strong>+10 Loyalty Points</strong>!
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="conf-subtitle">
+                  This is how the confirmation step looks. The reservation was <strong>not</strong> saved.
+                </p>
+                <div className="ref-badge">
+                  Sample reference: <strong>{bookingId}</strong>
+                </div>
+                <p className="conf-info">
+                  No notification was sent and the loyalty total shown is illustrative.
+                  It will not appear under My Bookings.
+                </p>
+              </>
+            )}
             <div className="conf-actions">
               <Button size="medium" variant="primary" onClick={() => navigate('/my-bookings')}>
                 {t('My Bookings')}
