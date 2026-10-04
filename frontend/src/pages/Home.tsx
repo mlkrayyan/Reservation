@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui/Button';
+import heroBeauty from '../assets/hero-beauty.jpg';
 import './Home.css';
 
 export default function Home() {
@@ -11,8 +12,7 @@ export default function Home() {
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-overlay" />
-        <div className="hero-content">
+        <div className="hero-copy">
           <span className="hero-badge">✦ LUXURY SPA & SALON IRAQ ✦</span>
           <h1>{t('Hero Title')}</h1>
           <p>{t('Hero Subtitle')}</p>
@@ -24,6 +24,13 @@ export default function Home() {
               {t('Category All')}
             </Button>
           </div>
+        </div>
+        <div className="hero-media">
+          <img
+            className="hero-image"
+            src={heroBeauty}
+            alt="Close-up of a model wearing full makeup, with luminous highlighted skin"
+          />
         </div>
       </section>
 

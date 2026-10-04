@@ -19,11 +19,11 @@
 }
 
 .search-input {
-  background: rgba(26, 26, 46, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 0.75rem 1.25rem;
-  color: white;
+  color: var(--text-primary);
   width: 320px;
   outline: none;
 }
@@ -34,9 +34,9 @@
 }
 
 .filter-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 0.85rem;
@@ -46,13 +46,14 @@
 
 .filter-btn.active {
   background: var(--accent-primary);
-  color: white;
+  color: var(--text-on-accent);
   border-color: transparent;
 }
 
 .table-card {
-  background: rgba(26, 26, 46, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   border-radius: 16px;
   overflow-x: auto;
   backdrop-filter: blur(10px);
@@ -74,7 +75,7 @@
 }
 
 .text-accent {
-  color: #C44DFF;
+  color: var(--accent-primary);
 }
 
 .action-buttons {

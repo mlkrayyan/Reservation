@@ -11,9 +11,9 @@
 }
 
 .cat-badge {
-  background: rgba(196, 77, 255, 0.15);
-  border: 1px solid rgba(196, 77, 255, 0.3);
-  color: #C44DFF;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-hover);
   padding: 0.2rem 0.6rem;
   border-radius: 10px;
   font-size: 0.8rem;
@@ -27,14 +27,14 @@
 }
 
 .service-modal-card {
-  background: rgba(26, 26, 46, 0.95);
-  border: 1px solid rgba(196, 77, 255, 0.3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-border);
   border-radius: 16px;
   padding: 2.5rem;
   max-width: 480px;
   width: 100%;
   position: relative;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-lg);
 }
 
 .admin-form {
@@ -51,11 +51,11 @@
 }
 
 .admin-form select {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 0.95rem;
   outline: none;
 }

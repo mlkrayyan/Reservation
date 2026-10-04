@@ -21,8 +21,9 @@
 }
 
 .kpi-card {
-  background: rgba(26, 26, 46, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   border-radius: 16px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
@@ -49,6 +50,7 @@
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
+  color: var(--text-primary);
 }
 
 .kpi-change {
@@ -63,8 +65,9 @@
 }
 
 .schedule-panel, .quick-actions-panel {
-  background: rgba(26, 26, 46, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   border-radius: 16px;
   padding: 1.75rem;
   backdrop-filter: blur(10px);
@@ -93,7 +96,7 @@
 }
 
 .admin-table th {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-tertiary);
   padding: 0.85rem 1rem;
   color: var(--text-muted);
   font-size: 0.825rem;
@@ -102,8 +105,9 @@
 
 .admin-table td {
   padding: 0.85rem 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   font-size: 0.9rem;
+  color: var(--text-primary);
 }
 
 .time-col {

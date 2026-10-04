@@ -5,13 +5,12 @@
 }
 
 .loyalty-hero-card {
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(123, 47, 190, 0.3) 100%);
-  border: 1px solid rgba(196, 77, 255, 0.3);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--accent-soft) 100%);
+  border: 1px solid var(--accent-border);
   border-radius: 20px;
   padding: 2.5rem;
-  backdrop-filter: blur(12px);
   margin-bottom: 3rem;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .card-top-info {
@@ -30,7 +29,7 @@
 .balance-val {
   font-size: 3.25rem;
   font-weight: 800;
-  color: #C44DFF;
+  color: var(--accent-primary);
 }
 
 .balance-val small {
@@ -58,23 +57,23 @@
 
 .progress-bar-bg {
   height: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--accent-soft-strong);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-primary) 0%, #C44DFF 100%);
+  background: var(--accent-gradient);
   border-radius: 10px;
   transition: width 0.4s ease;
 }
 
 .loyalty-rules-box {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--bg-tertiary);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  border-left: 3px solid #C44DFF;
+  border-left: 3px solid var(--accent-primary);
 }
 
 .loyalty-rules-box h4 {
@@ -98,8 +97,8 @@
 }
 
 .tx-table-wrapper {
-  background: rgba(26, 26, 46, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   overflow: hidden;
 }
@@ -111,7 +110,7 @@
 }
 
 .tx-table th {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-tertiary);
   padding: 1rem 1.25rem;
   color: var(--text-muted);
   font-size: 0.85rem;
@@ -120,16 +119,16 @@
 
 .tx-table td {
   padding: 1rem 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   font-size: 0.95rem;
 }
 
 .pts-earned {
-  color: #10b981;
+  color: var(--success);
   font-weight: 700;
 }
 
 .pts-redeemed {
-  color: #ef4444;
+  color: var(--danger);
   font-weight: 700;
 }

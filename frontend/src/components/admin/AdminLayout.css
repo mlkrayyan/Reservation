@@ -1,14 +1,14 @@
 .admin-layout {
   display: flex;
   min-height: 100vh;
-  background-color: #0A0A12;
+  background-color: var(--bg-primary);
   color: var(--text-primary);
 }
 
 .admin-sidebar {
   width: 260px;
-  background: rgba(18, 18, 30, 0.95);
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,14 +23,14 @@
 .sidebar-brand {
   cursor: pointer;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .brand-logo {
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 2px;
-  background: linear-gradient(135deg, #FFF 0%, #C44DFF 100%);
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -53,14 +53,14 @@
 }
 
 .sidebar-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  background: var(--surface-hover);
+  color: var(--text-primary);
 }
 
 .sidebar-item.active {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, #C44DFF 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(123, 47, 190, 0.3);
+  background: var(--accent-gradient);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-accent);
 }
 
 .back-to-site {
@@ -82,9 +82,9 @@
 }
 
 .admin-topbar {
-  background: rgba(18, 18, 30, 0.85);
+  background: rgba(255, 255, 255, 0.85); /* light glass over blurred page content, no token fits */
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-color);
   padding: 1.25rem 2.5rem;
   display: flex;
   justify-content: space-between;
@@ -107,9 +107,9 @@
 }
 
 .admin-badge {
-  background: rgba(196, 77, 255, 0.2);
-  border: 1px solid rgba(196, 77, 255, 0.4);
-  color: #C44DFF;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-hover);
   font-size: 0.75rem;
   font-weight: 800;
   padding: 0.2rem 0.6rem;
@@ -118,7 +118,7 @@
 
 .topbar-logout {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-strong);
   color: var(--text-muted);
   padding: 0.3rem 0.75rem;
   border-radius: 6px;
@@ -127,8 +127,8 @@
 }
 
 .topbar-logout:hover {
-  color: #ef4444;
-  border-color: #ef4444;
+  color: var(--danger);
+  border-color: var(--danger);
 }
 
 .admin-content {

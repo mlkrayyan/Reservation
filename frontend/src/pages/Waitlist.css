@@ -18,8 +18,9 @@
 }
 
 .waitlist-card {
-  background: rgba(26, 26, 46, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   border-radius: 16px;
   padding: 1.75rem;
   backdrop-filter: blur(10px);
@@ -41,15 +42,13 @@
 }
 
 .status-waiting {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: var(--warning-soft);
+  color: var(--warning);
 }
 
 .status-offered {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: var(--success-soft);
+  color: var(--success);
 }
 
 .date-badge {
@@ -69,9 +68,8 @@
 }
 
 .offer-alert {
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #10b981;
+  background: var(--success-soft);
+  color: var(--success);
   padding: 0.75rem;
   border-radius: 8px;
   font-size: 0.85rem;
@@ -80,14 +78,14 @@
 }
 
 .waitlist-modal-card {
-  background: rgba(26, 26, 46, 0.95);
-  border: 1px solid rgba(196, 77, 255, 0.3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-border);
   border-radius: 16px;
   padding: 2.5rem;
   max-width: 440px;
   width: 100%;
   position: relative;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-lg);
 }
 
 .waitlist-form {
@@ -98,11 +96,11 @@
 }
 
 .waitlist-form select {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 0.95rem;
   outline: none;
 }

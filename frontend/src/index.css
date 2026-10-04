@@ -1,22 +1,75 @@
 :root {
   --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --bg-primary: #121212; /* Dark Charcoal */
-  --bg-secondary: #1E1E1E;
-  --text-primary: #F5F5F5;
-  --text-secondary: #A0A0A0;
-  
-  --accent-primary: #9D00FF; /* Electric Purple */
-  --accent-hover: #B026FF;
-  --accent-magenta: #FF00FF;
-  
-  --border-color: #333333;
-  --radius: 8px;
-  
+
+  /* ---------------------------------------------------------------------
+     Light theme — warm cream & soft orchid.
+
+     Every colour in the app resolves through a token here. Stylesheets must
+     not hardcode hex or rgba values: the dark build hardcoded 217 of them,
+     which is why it could not be re-themed without touching 20 files.
+     --------------------------------------------------------------------- */
+
+  /* Surfaces, lightest to most recessed */
+  --bg-primary: #FDFBF9;      /* page — warm ivory, not pure white */
+  --bg-secondary: #FFFFFF;    /* cards and panels */
+  --bg-tertiary: #F6F1F4;     /* subtle fills, table stripes, chips */
+  --surface-hover: #F0E9EE;   /* hover state on tertiary surfaces */
+  --surface-sunken: #F3EEF1;  /* inputs, wells */
+
+  /* Text */
+  --text-primary: #2B2630;    /* warm near-black */
+  --text-secondary: #5C5464;
+  --text-muted: #7A7280;
+  --text-on-accent: #FFFFFF;
+
+  /* Brand accent — the old electric purple softened so it holds up on white */
+  --accent-primary: #A855C9;
+  --accent-hover: #9340B4;
+  --accent-active: #7E3399;
+  --accent-soft: #F4E8F8;     /* tinted background for badges and highlights */
+  --accent-soft-strong: #E8D2F0;
+  --accent-border: #DDBFEA;
+  --accent-gradient: linear-gradient(135deg, #A855C9 0%, #C77DDC 100%);
+
+  /* Secondary accent */
+  --accent-gold: #C9A227;
+  --accent-gold-soft: #FBF3DC;
+
+  /* Status */
+  --success: #0E9F6E;
+  --success-soft: #E3F5EE;
+  --danger: #DC2626;
+  --danger-hover: #B91C1C;
+  --danger-soft: #FDE9E9;
+  --warning: #B45309;
+  --warning-soft: #FDF2E2;
+  --info: #2563EB;
+  --info-soft: #E6EDFD;
+
+  /* Lines */
+  --border-color: #ECE6E9;
+  --border-strong: #DCD3D8;
+
+  /* Elevation — warm-tinted, soft, never black */
+  --shadow-sm: 0 1px 2px rgba(43, 38, 48, 0.05);
+  --shadow-md: 0 4px 12px rgba(43, 38, 48, 0.07);
+  --shadow-lg: 0 12px 32px rgba(43, 38, 48, 0.10);
+  --shadow-accent: 0 6px 20px rgba(168, 85, 201, 0.25);
+
+  /* Modal backdrop */
+  --overlay: rgba(43, 38, 48, 0.45);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
   font-family: var(--font-family);
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.5;
   font-weight: 400;
+  color-scheme: light;
 }
 
 body {
@@ -24,6 +77,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -40,6 +96,12 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
 }
 
 [dir="rtl"] {

@@ -12,9 +12,9 @@
 }
 
 .tab-link {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
   padding: 0.75rem 1.75rem;
   border-radius: 12px;
   font-size: 0.95rem;
@@ -25,14 +25,14 @@
 
 .tab-link:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--surface-hover);
 }
 
 .tab-link.active {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, #C44DFF 100%);
-  color: white;
+  background: var(--accent-gradient);
+  color: var(--text-on-accent);
   border-color: transparent;
-  box-shadow: 0 4px 15px rgba(123, 47, 190, 0.3);
+  box-shadow: var(--shadow-accent);
 }
 
 .bookings-list {
@@ -42,8 +42,9 @@
 }
 
 .booking-card {
-  background: rgba(26, 26, 46, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
   border-radius: 16px;
   padding: 1.75rem;
   display: flex;
@@ -54,7 +55,7 @@
 }
 
 .booking-card:hover {
-  border-color: rgba(196, 77, 255, 0.3);
+  border-color: var(--accent-border);
 }
 
 .card-header-row {
@@ -79,27 +80,27 @@
 }
 
 .status-confirmed {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: var(--success-soft);
+  color: var(--success);
 }
 
 .status-pending {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: var(--warning-soft);
+  color: var(--warning);
 }
 
+/* Distinct from Confirmed: both mapping to green made a finished visit and an
+   upcoming one indistinguishable at a glance, which is the main thing this
+   badge exists to tell you. */
 .status-completed {
-  background: rgba(59, 130, 246, 0.15);
-  color: #3b82f6;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: var(--info-soft);
+  color: var(--info);
 }
 
-.status-cancelled {
-  background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+.status-cancelled,
+.status-noshow {
+  background: var(--danger-soft);
+  color: var(--danger);
 }
 
 .booking-main h3 {
@@ -130,6 +131,6 @@
   text-align: center;
   padding: 4rem;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-tertiary);
   border-radius: 16px;
 }

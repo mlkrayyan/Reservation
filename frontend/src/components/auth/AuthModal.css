@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: var(--overlay);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -14,9 +14,9 @@
 }
 
 .auth-modal-card {
-  background: rgba(26, 26, 46, 0.95);
-  border: 1px solid rgba(196, 77, 255, 0.2);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-border);
+  box-shadow: var(--shadow-lg);
   border-radius: 16px;
   width: 100%;
   max-width: 440px;
@@ -40,7 +40,7 @@
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
-  background: linear-gradient(135deg, #FFF 0%, var(--accent-primary) 100%);
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -69,11 +69,11 @@
 }
 
 .input-group input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  color: white;
+  color: var(--text-primary);
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.2s;
@@ -95,7 +95,7 @@
 .divider::before, .divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .divider span {
@@ -118,14 +118,14 @@
   font-weight: 500;
   font-size: 0.9rem;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  border: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
   transition: background 0.2s;
 }
 
 .social-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--surface-hover);
 }
 
 .toggle-auth {
